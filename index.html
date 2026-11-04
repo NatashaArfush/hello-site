@@ -3,35 +3,142 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hospital wayfinding | Northline Studio concept</title>
+  <title>Hospital Wayfinding | Independent Concept</title>
   <meta name="description" content="Explore a fictional hospital wayfinding concept with an interactive floor plan and a practice demo request form.">
   <style>
-    :root{--ink:#202236;--accent:#ab401f;--soft:#f5f2ec;--line:#d9ddd9;--green:#17635a}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:#fff;font:16px/1.6 system-ui,sans-serif}a{color:var(--accent)}button,input{font:inherit}button{cursor:pointer}a,button,input{touch-action:manipulation}a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #126aaf;outline-offset:4px}.wrap{width:min(1100px,100% - 40px);margin:auto}.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:22px}.brand{font-weight:750;text-decoration:none;color:var(--ink)}.cta{display:inline-block;border:0;border-radius:9px;background:var(--accent);color:white;padding:12px 20px;text-decoration:none;font-weight:650}.cta:hover{background:#873219}.hero{background:var(--soft);padding:64px 0}.hero-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center}.eyebrow{color:var(--accent);font-size:13px;font-weight:750;letter-spacing:.09em;text-transform:uppercase}h1{font-size:clamp(32px,4.5vw,52px);line-height:1.12;letter-spacing:-.035em;margin:14px 0 22px}h2{font-size:clamp(24px,3vw,34px);line-height:1.2;letter-spacing:-.025em}h3{line-height:1.3}.lead{font-size:18px}.hero-card{padding:28px;border-radius:20px;background:#fff;border:1px solid var(--line);box-shadow:0 16px 40px #2022360b}.hero-card svg{width:100%;height:auto;display:block}.caption,.note{font-size:14px;color:#535966}.tag{display:inline-block;border-radius:20px;background:#e7f1ec;color:var(--green);padding:5px 12px;font-size:13px;font-weight:650}.benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;padding-block:44px}.benefits h2{font-size:19px;line-height:1.3;letter-spacing:normal;margin-top:1em;margin-bottom:10px}.benefits p{margin-top:0;color:#535966}.demo-section{padding:52px 0;background:var(--soft);scroll-margin-top:20px}.intro{max-width:660px}.demo-grid{display:grid;grid-template-columns:280px 1fr;gap:24px;margin-top:28px}.panel,.map-card{background:white;border:1px solid var(--line);border-radius:16px;padding:24px}.panel h3{margin-top:0}.destinations{display:grid;gap:10px}.destination{border:1px solid #cdd4d1;border-radius:8px;padding:12px;text-align:left;color:var(--ink);background:white;font-weight:650}.destination:hover{background:#f0f5f2}.destination[aria-pressed="true"]{border-color:var(--green);background:var(--green);color:white}.directions{margin-top:22px;padding-top:16px;border-top:1px solid var(--line);min-height:130px}.directions p{margin:8px 0}.reset{background:none;border:0;text-decoration:underline;color:var(--accent);padding:8px 0}.map-card svg{display:block;width:100%;height:auto}.legend{display:flex;flex-wrap:wrap;gap:20px;font-size:13px;color:#535966}.dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--green);margin-right:6px}.dot.start{background:#235d9f}.request{padding-block:60px;display:grid;grid-template-columns:1fr 1fr;gap:56px}.request h2{margin-top:10px}form{border:1px solid var(--line);border-radius:16px;padding:24px}label{display:block;font-weight:650;margin-bottom:6px}input{width:100%;padding:11px;border:1px solid #929b99;border-radius:7px;margin-bottom:18px}form .cta{width:100%}.foot{border-top:1px solid var(--line);padding-block:24px;font-size:13px;color:#535966}.skip{position:absolute;top:-100px;left:20px;background:white;padding:12px;z-index:2}.skip:focus{top:10px}[hidden]{display:none!important}
-    .how-it-works{padding-block:36px 52px;border-top:1px solid var(--line)}.how-it-works h2{max-width:680px}.steps{list-style:none;padding:0;margin:28px 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}.steps li{padding:24px;background:var(--soft);border:1px solid var(--line);border-radius:14px}.step-number{color:var(--green);font-size:14px;font-weight:750}.steps h3{font-size:19px;margin:12px 0}.steps p{margin:0;color:#535966}.how-link{font-weight:650;display:inline-block;padding-block:8px}
-    @media(max-width:760px){.steps{grid-template-columns:1fr;gap:14px}.how-it-works{padding-block:28px 36px}}
-    #request{scroll-margin-top:24px}.map-next-step{margin-top:24px;padding-top:20px;border-top:1px solid var(--line)}.map-next-step p:first-child{margin-top:0}.map-next-step .note{margin-bottom:0}
-    .search-tools{margin-bottom:16px}.search-tools input{margin-bottom:4px}.search-tools .reset{font-size:14px}.search-summary{font-size:14px;color:#535966;margin:4px 0 12px}.map-card{scroll-margin-top:20px}
-    @media(max-width:760px){.hero-grid,.demo-grid,.request{grid-template-columns:1fr;gap:24px}.hero{padding:36px 0}.benefits{grid-template-columns:1fr;gap:10px;padding-block:28px}.hero-card{padding:20px}.map-card{padding:12px}.request{padding-block:36px}.nav .cta{font-size:14px;padding:10px 14px}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+    :root {
+      --ink:#142b3b; --accent:#12675e; --green:#12675e;
+      --soft:#f6f5f0; --line:#d8e1dd; --muted:#4d616c;
+    }
+    * { box-sizing:border-box }
+    html { scroll-behavior:smooth }
+    body { margin:0; background:#fff; color:var(--ink); font:16px/1.65 system-ui,sans-serif }
+    a { color:var(--accent); text-underline-offset:4px }
+    button,input { font:inherit }
+    button { cursor:pointer }
+    a,button,input { touch-action:manipulation }
+    a:focus-visible,button:focus-visible,input:focus-visible { outline:3px solid #235d9f; outline-offset:4px }
+    .wrap { width:min(1160px,100% - 48px); margin-inline:auto }
+    .nav { display:flex; justify-content:space-between; align-items:center; gap:20px; padding-block:24px }
+    .brand { text-decoration:none; color:var(--ink); font-size:16px; font-weight:750; letter-spacing:-.025em; line-height:1.3 }
+    .brand small { display:block; margin-top:4px; font-size:11px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--muted) }
+    .cta { display:inline-flex; align-items:center; justify-content:center; min-height:48px; border:1px solid transparent; border-radius:7px; padding:12px 22px; background:var(--accent); color:white; font-weight:650; text-decoration:none; line-height:1.4 }
+    .cta:hover { background:#0c5049 }
+    .nav .cta { background:white; border-color:var(--line); color:var(--ink) }
+    .nav .cta:hover { border-color:var(--accent); color:var(--accent) }
+    .hero { padding:76px 0 80px; background:var(--soft); border-block:1px solid #e8eae2 }
+    .hero-grid { display:grid; grid-template-columns:1.08fr 1fr; align-items:center; gap:64px }
+    .eyebrow { color:var(--accent); font-size:11px; font-weight:750; letter-spacing:.14em; text-transform:uppercase; margin:0 0 16px }
+    h1 { font-size:clamp(38px,4.8vw,62px); font-weight:700; line-height:1.06; letter-spacing:-.05em; margin:0 0 24px; max-width:600px; text-wrap:balance }
+    h2 { font-size:clamp(28px,3.2vw,40px); line-height:1.16; letter-spacing:-.035em; font-weight:650; margin:0 0 20px; text-wrap:balance }
+    h3 { line-height:1.35; letter-spacing:-.02em }
+    .lead { font-size:18px; line-height:1.7; color:var(--muted); max-width:490px; margin:0 0 28px }
+    .note,.caption { font-size:13px; color:var(--muted); line-height:1.6 }
+    .hero .note { margin:16px 0 0 }
+    .hero-card { background:#fff; padding:28px; border:1px solid var(--line); border-radius:16px; box-shadow:0 24px 48px -28px #142b3b45; transform:rotate(-2deg) }
+    .tag { display:inline-block; padding:5px 10px; background:#e8f2ee; color:var(--accent); border-radius:4px; font-size:11px; font-weight:650; letter-spacing:.025em }
+    .hero-card svg { display:block; width:100%; height:auto; margin-block:16px }
+    .caption { border-top:1px solid var(--line); padding-top:14px; margin:0 }
+    .benefits { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:40px; padding-block:52px }
+    .benefits article { padding-left:18px; border-left:2px solid #b4d4c7 }
+    .benefits h2 { font-size:18px; line-height:1.35; letter-spacing:-.02em; margin:0 0 8px }
+    .benefits p { font-size:14px; color:var(--muted); margin:0 }
+    .how-it-works { padding-block:52px 64px; border-top:1px solid var(--line) }
+    .how-it-works h2 { max-width:640px }
+    .steps { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:40px; list-style:none; padding:0; margin:36px 0 24px }
+    .steps li { padding-top:16px; border-top:1px solid var(--line) }
+    .step-number { font-size:12px; color:var(--accent); font-weight:750; letter-spacing:.08em }
+    .steps h3 { font-size:18px; margin:12px 0 8px }
+    .steps p { color:var(--muted); font-size:14px; margin:0 }
+    .how-link { font-size:14px; font-weight:650; display:inline-block; padding-block:10px }
+    .demo-section { background:#edf3ef; padding-block:64px; scroll-margin-top:20px; border-block:1px solid var(--line) }
+    .intro { max-width:650px }
+    .intro>p:last-child { color:var(--muted); margin-bottom:0 }
+    .demo-grid { display:grid; grid-template-columns:300px minmax(0,1fr); margin-top:32px; border:1px solid #c7d6cd; border-radius:14px; overflow:hidden; background:white; box-shadow:0 16px 40px -30px #142b3b55 }
+    .panel { padding:28px; border-right:1px solid var(--line); background:#fbfcfa }
+    .panel h3 { margin:0 0 24px; font-size:19px }
+    .map-card { padding:28px; scroll-margin-top:20px; min-width:0 }
+    .map-card svg { display:block; width:100%; height:auto }
+    .map-floor { display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin:0 0 14px; padding-bottom:14px; border-bottom:1px solid var(--line); font-size:13px }
+    .map-floor span { font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.08em }
+    .destinations { display:grid; gap:10px }
+    .destination { display:flex; align-items:center; justify-content:space-between; width:100%; min-height:48px; padding:12px 14px; background:white; border:1px solid var(--line); border-radius:6px; color:var(--ink); font-size:14px; font-weight:650; text-align:left }
+    .destination::after { content:'→'; color:var(--accent); margin-left:8px }
+    .destination:hover { border-color:var(--accent); background:#eef6f1 }
+    .destination[aria-pressed="true"] { background:var(--green); border-color:var(--green); color:white }
+    .destination[aria-pressed="true"]::after { color:white }
+    .directions { margin-top:24px; padding-top:20px; border-top:1px solid var(--line); min-height:140px; font-size:14px }
+    .directions p { color:var(--muted); margin:8px 0 }
+    .reset { background:transparent; color:var(--accent); border:0; text-decoration:underline; text-underline-offset:3px; font-size:14px; min-height:44px; padding:8px 0 }
+    .search-tools { margin-bottom:18px }
+    .search-tools label { font-size:12px }
+    .search-tools input { margin-bottom:0; background:white }
+    .search-tools .note { font-size:12px; margin:8px 0 0 }
+    .search-summary { font-size:13px; color:var(--muted); margin:4px 0 12px }
+    .legend { display:flex; flex-wrap:wrap; gap:20px; font-size:12px; color:var(--muted); margin-top:14px }
+    .dot { display:inline-block; width:9px; height:9px; border-radius:50%; background:var(--green); margin-right:6px }
+    .dot.start { background:#235d9f }
+    .map-next-step { border-top:1px solid var(--line); margin-top:24px; padding-top:22px }
+    .map-next-step p:first-child { margin:0 0 14px; font-size:16px }
+    .map-next-step .note { margin-bottom:0 }
+    #request { scroll-margin-top:24px }
+    .request { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start; padding-block:80px }
+    .request>div>p:not(.eyebrow) { color:var(--muted); max-width:480px }
+    form { padding:32px; background:var(--soft); border:1px solid var(--line); border-radius:12px }
+    label { display:block; margin-bottom:8px; font-size:14px; font-weight:650 }
+    input { width:100%; min-width:0; min-height:48px; margin-bottom:20px; padding:12px; border:1px solid #8a9c99; border-radius:6px; background:white; color:var(--ink); font-size:16px }
+    input::placeholder { color:#60716f; opacity:1 }
+    form .cta { width:100% }
+    #form-status { font-size:14px; border-left:3px solid var(--accent); padding-left:12px }
+    .foot { border-top:1px solid var(--line); padding-block:24px; color:var(--muted); font-size:12px }
+    .skip { position:absolute; top:-100px; left:20px; padding:12px; background:white; z-index:2 }
+    .skip:focus { top:10px }
+    [hidden] { display:none!important }
+    .department { transition:fill .15s,stroke .15s }
+    .department.is-selected { fill:#d4eade; stroke:var(--accent); stroke-width:3 }
+    .department-label { font-weight:650 }
+    @media(max-width:760px) {
+      .wrap { width:calc(100% - 40px) }
+      .nav { gap:12px; padding-block:18px }
+      .brand { font-size:14px }
+      .brand small { font-size:10px }
+      .nav .cta { font-size:13px; padding:10px 14px; white-space:nowrap }
+      .hero { padding:44px 0 48px }
+      .hero-grid,.demo-grid,.request { grid-template-columns:1fr; gap:28px }
+      .hero-grid { gap:36px }
+      h1 { font-size:42px }
+      .lead { font-size:17px }
+      .hero-card { transform:none; padding:22px }
+      .benefits { grid-template-columns:1fr; gap:24px; padding-block:36px }
+      .how-it-works { padding-block:36px 44px }
+      .steps { grid-template-columns:1fr; gap:24px; margin-top:28px }
+      .demo-section { padding-block:44px }
+      .demo-grid { gap:0 }
+      .panel { border-right:0; border-bottom:1px solid var(--line); padding:24px }
+      .map-card { padding:16px }
+      .request { padding-block:48px; gap:24px }
+      form { padding:24px }
+    }
+    @media(prefers-reduced-motion:reduce) { html{scroll-behavior:auto}.department{transition:none} }
   </style>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
-  <nav class="nav wrap" aria-label="Main navigation"><a class="brand" href="/">Northline Studio</a><a class="cta" href="#demo">Try the map</a></nav>
+  <nav class="nav wrap" aria-label="Main navigation"><a class="brand" href="/">Hospital Wayfinding<small>Independent concept</small></a><a class="cta" href="#demo">Try the map</a></nav>
   <header class="hero"><div class="wrap hero-grid"><div>
     <p class="eyebrow">For hospitals and health systems</p>
     <h1>A clearer path to every appointment.</h1>
     <p class="lead">Help patients and visitors find the right department, with indoor directions they can follow from the entrance.</p>
     <a class="cta" href="#demo">Explore the hospital map</a>
     <p class="note">An independent wayfinding concept.</p>
-  </div><div class="hero-card"><span class="tag">From entrance to destination</span>
+  </div><div class="hero-card"><span class="tag">Cedar Hospital · Wayfinding concept</span>
     <svg viewBox="0 0 360 230" role="img" aria-label="Illustration of a route from a hospital entrance to a department">
       <rect x="15" y="30" width="330" height="180" rx="14" fill="#f5f2ec"/>
       <g fill="#e0e9e3" stroke="#bdcfc3" stroke-width="2"><rect x="32" y="47" width="80" height="55" rx="6"/><rect x="135" y="47" width="80" height="55" rx="6"/><rect x="238" y="47" width="88" height="55" rx="6"/><rect x="135" y="151" width="80" height="40" rx="6"/><rect x="238" y="151" width="88" height="40" rx="6"/></g>
-      <path d="M65 175V126H278V104" fill="none" stroke="#17635a" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-      <circle cx="65" cy="175" r="8" fill="#235d9f"/><circle cx="278" cy="104" r="8" fill="#17635a"/>
-      <g fill="#202236" font-family="system-ui,sans-serif" font-size="13"><text x="32" y="157">Entrance</text><text x="250" y="80">Your visit</text></g>
+      <path d="M65 175V126H278V104" fill="none" stroke="#12675e" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="65" cy="175" r="8" fill="#235d9f"/><circle cx="278" cy="104" r="8" fill="#12675e"/>
+      <g fill="#142b3b" font-family="system-ui,sans-serif" font-size="13"><text x="32" y="157">Entrance</text><text x="250" y="80">Your visit</text></g>
     </svg><p class="caption">One simple route. A more confident arrival.</p>
   </div></div></header>
   <main id="main">
@@ -69,16 +176,17 @@
         <button class="reset" id="reset" type="button">Clear route</button>
         <noscript><p>Enable JavaScript to select routes. All destinations are on the main corridor: Reception is left, Pharmacy is straight ahead, and Imaging is right.</p></noscript>
       </div><div class="map-card">
+        <p class="map-floor"><strong>Cedar Hospital</strong><span>Ground floor</span></p>
         <svg viewBox="0 0 640 420" role="img" aria-labelledby="map-title map-description">
           <title id="map-title">Cedar Hospital — ground floor</title>
           <desc id="map-description">A fictional floor plan. The entrance is at the bottom centre. A corridor leads to Reception on the left, Pharmacy straight ahead, and Imaging on the right. Text directions appear beside the map.</desc>
           <rect x="14" y="14" width="612" height="392" rx="16" fill="#f8faf8" stroke="#cdd4d1" stroke-width="2"/>
-          <g fill="#e5ece7" stroke="#c1d0c6" stroke-width="2"><rect x="42" y="55" width="182" height="130" rx="8"/><rect x="258" y="55" width="124" height="130" rx="8"/><rect x="416" y="55" width="182" height="130" rx="8"/><rect x="42" y="259" width="182" height="112" rx="8"/><rect x="416" y="259" width="182" height="112" rx="8"/></g>
+          <g fill="#e5ece7" stroke="#c1d0c6" stroke-width="2"><rect id="room-reception" class="department" x="42" y="55" width="182" height="130" rx="8"/><rect id="room-pharmacy" class="department" x="258" y="55" width="124" height="130" rx="8"/><rect id="room-imaging" class="department" x="416" y="55" width="182" height="130" rx="8"/><rect x="42" y="259" width="182" height="112" rx="8"/><rect x="416" y="259" width="182" height="112" rx="8"/></g>
           <path d="M320 366V222M130 222H510M130 222V184M320 222V184M510 222V184" fill="none" stroke="#e1e6e2" stroke-width="30" stroke-linecap="round"/>
-          <path id="route-line" d="M320 366V222" hidden fill="none" stroke="#17635a" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle id="route-end" cx="320" cy="184" r="9" hidden fill="#17635a" stroke="white" stroke-width="3"/>
+          <path id="route-line" d="M320 366V222" hidden fill="none" stroke="#12675e" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle id="route-end" cx="320" cy="184" r="9" hidden fill="#12675e" stroke="white" stroke-width="3"/>
           <circle cx="320" cy="366" r="10" fill="#235d9f" stroke="white" stroke-width="3"/>
-          <g fill="#202236" font-family="system-ui,sans-serif" font-size="18" text-anchor="middle"><text x="133" y="125">Reception</text><text x="320" y="125">Pharmacy</text><text x="507" y="125">Imaging</text><text x="133" y="320">Waiting area</text><text x="507" y="320">Consultation</text><text x="320" y="399" font-size="15">You are here · Entrance</text></g>
+          <g fill="#142b3b" font-family="system-ui,sans-serif" font-size="18" class="department-label" text-anchor="middle"><text x="133" y="125">Reception</text><text x="320" y="125">Pharmacy</text><text x="507" y="125">Imaging</text><text x="133" y="320">Waiting area</text><text x="507" y="320">Consultation</text><text x="320" y="399" font-size="15">You are here · Entrance</text></g>
         </svg>
         <div class="legend"><span><i class="dot start"></i>You are here</span><span><i class="dot"></i>Selected route</span></div>
         <p class="note">Ground floor · Fictional layout, not to scale. Routes are predefined for this demonstration.</p>
@@ -93,7 +201,7 @@
       <form id="demo-form"><label for="name">Name</label><input id="name" name="name" autocomplete="off" required maxlength="100" placeholder="Alex Example"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="off" required maxlength="254" placeholder="alex@example.com"><button class="cta" type="submit">Try demo request</button><p id="form-status" role="status" aria-live="polite" hidden></p></form>
     </section>
   </main>
-  <footer class="foot"><div class="wrap">Northline Studio · Independent practice concept. Not affiliated with Mappedin. Venue, routes, and benefits are illustrative.</div></footer>
+  <footer class="foot"><div class="wrap">Hospital Wayfinding · Independent practice concept. Not affiliated with Mappedin. Venue, routes, and benefits are illustrative.</div></footer>
   <script>
     const routes = {
       reception: {name:'Reception', path:'M320 366V222H130V184', x:130, text:'Walk straight from the entrance to the main corridor. Turn left, then turn right into Reception.'},
@@ -131,6 +239,8 @@
     const directions = document.getElementById('route-text');
     buttons.forEach(button => button.addEventListener('click', () => {
       const route = routes[button.dataset.destination];
+      buttons.forEach(item => document.getElementById('room-' + item.dataset.destination)
+        .classList.toggle('is-selected', item === button));
       buttons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
       line.setAttribute('d', route.path);
       line.removeAttribute('hidden');
@@ -147,6 +257,8 @@
     }));
     document.getElementById('reset').addEventListener('click', () => {
       buttons.forEach(button => button.setAttribute('aria-pressed', 'false'));
+      buttons.forEach(button => document.getElementById('room-' + button.dataset.destination)
+        .classList.remove('is-selected'));
       line.setAttribute('hidden', '');
       endpoint.setAttribute('hidden', '');
       title.textContent = 'Start at the entrance';
@@ -162,6 +274,7 @@
   </script>
 </body>
 </html>
+
 
 
 
