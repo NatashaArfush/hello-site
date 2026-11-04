@@ -1,279 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hospital Wayfinding | Independent Concept</title>
-  <meta name="description" content="Explore a fictional hospital wayfinding concept with an interactive floor plan and a practice demo request form.">
-  <style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hospital Wayfinding | Independent Healthcare Concept</title>
+<meta name="description" content="An independent hospital wayfinding concept with searchable departments and illustrative indoor routes.">
+<style>
+#clarity-concept{--paper:#27272e;--ink:#fafaff;--sub:#c1c2d3;--rule:#484854;--route:#777bff;--map:#24252f;color:var(--ink);background:var(--paper);font-family:system-ui,-apple-system,BlinkMacSystemFont,sans-serif;color-scheme:light;overflow:hidden}
+#clarity-concept *{box-sizing:border-box}#clarity-concept button{font:inherit}#clarity-concept .cc-nav{display:flex;justify-content:space-between;align-items:center;padding:24px 40px;border-bottom:1px solid var(--rule);gap:20px}#clarity-concept .cc-brand{font-size:18px;font-weight:600;letter-spacing:-.7px}#clarity-concept .cc-brand span{display:block;font:10px/1.5 monospace;letter-spacing:1.8px;text-transform:uppercase;margin-top:4px;color:var(--sub)}#clarity-concept .cc-links{font-size:12px;display:flex;gap:24px;align-items:center}#clarity-concept .cc-links span:last-child{border-bottom:1px solid var(--ink);padding-bottom:4px}#clarity-concept .cc-hero{display:grid;grid-template-columns:.95fr 1.05fr;min-height:590px}#clarity-concept .cc-copy{padding:64px 20px 44px 40px;z-index:1}#clarity-concept .cc-eyebrow{font:10px/1.6 monospace;letter-spacing:1.4px;text-transform:uppercase;display:flex;align-items:center;gap:9px;margin-bottom:28px}#clarity-concept .cc-dot{width:7px;height:7px;background:var(--route);border-radius:50%}#clarity-concept h1{font-family:Arial,Helvetica,sans-serif;font-weight:600;font-size:clamp(44px,5.5vw,64px);line-height:1.04;letter-spacing:-2.8px;margin:0 0 24px}#clarity-concept h1 em{font-weight:400;color:var(--route)}#clarity-concept .cc-deck{font-size:15px;line-height:1.7;color:var(--sub);max-width:310px;margin:0 0 26px}#clarity-concept .cc-primary{display:inline-flex;align-items:center;justify-content:space-between;gap:28px;background:#474bff;color:#ffffff;padding:15px 18px;border:0;border-radius:7px;font-size:12px;min-height:46px}#clarity-concept .cc-disclaimer{font:10px/1.6 monospace;color:var(--sub);margin-top:16px}#clarity-concept .cc-art{position:relative;background:radial-gradient(ellipse at 60% 65%,#4145ff33,transparent 65%),var(--map);border-left:1px solid var(--rule);min-height:590px;display:flex;align-items:center;justify-content:center;padding:14px 0 100px}#clarity-concept .cc-art::before{content:'';position:absolute;inset:0;background-image:linear-gradient(#9b9ddd0c 1px,transparent 1px),linear-gradient(90deg,#9b9ddd0c 1px,transparent 1px);background-size:24px 24px}#clarity-concept .cc-map{position:relative;width:100%;height:auto;display:block}#clarity-concept .cc-map text{font-family:Arial,sans-serif;fill:var(--ink)}#clarity-concept .cc-maptitle{position:absolute;top:24px;left:24px;font:10px/1.5 monospace;letter-spacing:1px;color:var(--sub);z-index:1}#clarity-concept .cc-maptitle b{font-weight:500;color:var(--ink)}#clarity-concept .cc-north{position:absolute;right:24px;top:24px;font:12px/1.6 monospace;color:var(--sub)}#clarity-concept .cc-route-card{position:absolute;bottom:24px;left:24px;right:24px;background:#f9faff;color:#1d203b;border:1px solid #d9dced;border-radius:12px;box-shadow:0 12px 35px #11112555;padding:18px 20px;z-index:2}#clarity-concept .cc-card-kicker{font:10px/1.5 monospace;color:#626981;letter-spacing:1px;text-transform:uppercase}#clarity-concept .cc-card-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:8px 0 14px}#clarity-concept .cc-dest{font-size:21px;font-weight:500;letter-spacing:-.5px}#clarity-concept .cc-floor{font:10px/1.4 monospace;background:#e8e9ff;color:#3e43b8;padding:6px 9px;border-radius:3px}#clarity-concept .cc-directions{font-size:12px;line-height:1.6;color:#586078;border-top:1px solid #dedfeb;padding-top:12px;margin:0}#clarity-concept .cc-bottom{padding:30px 40px;display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:30px;border-top:1px solid var(--rule)}#clarity-concept .cc-bottom h2{font:600 27px/1.15 Arial,sans-serif;letter-spacing:-.8px;margin:0}#clarity-concept .cc-bottom p{font-size:12px;color:var(--sub);line-height:1.6;margin:7px 0 0}#clarity-concept .cc-bottom strong{font-size:12px;font-weight:500}#clarity-concept .cc-number{font:10px/1.4 monospace;color:var(--route);display:block;margin-bottom:10px}#clarity-concept .cc-lab{border-top:1px solid var(--rule);padding:18px 40px;display:flex;align-items:center;justify-content:space-between;gap:12px}#clarity-concept .cc-lab label{font:10px/1.5 monospace;color:var(--sub);text-transform:uppercase;letter-spacing:1px}#clarity-concept .cc-options{display:flex;gap:6px;flex-wrap:wrap}#clarity-concept .cc-options button{border:1px solid var(--rule);background:transparent;color:var(--ink);padding:10px 14px;min-height:42px;font-size:12px;border-radius:3px}#clarity-concept .cc-options button[aria-pressed=true]{background:#474bff;color:#ffffff;border-color:#474bff}
+@media(max-width:650px){#clarity-concept .cc-nav{padding:20px}#clarity-concept .cc-links{display:none}#clarity-concept .cc-hero{grid-template-columns:1fr}#clarity-concept .cc-copy{padding:40px 24px}#clarity-concept h1{font-size:48px;letter-spacing:-2px}#clarity-concept .cc-art{border-left:0;border-top:1px solid var(--rule);min-height:550px;padding-top:35px}#clarity-concept .cc-map{max-height:440px}#clarity-concept .cc-bottom{padding:28px 24px;grid-template-columns:1fr;gap:24px}#clarity-concept .cc-lab{padding:18px 24px;align-items:flex-start;flex-direction:column}}
 
-    :root {
-      --ink:#142b3b; --accent:#12675e; --green:#12675e;
-      --soft:#f6f5f0; --line:#d8e1dd; --muted:#4d616c;
-    }
-    * { box-sizing:border-box }
-    html { scroll-behavior:smooth }
-    body { margin:0; background:#fff; color:var(--ink); font:16px/1.65 system-ui,sans-serif }
-    a { color:var(--accent); text-underline-offset:4px }
-    button,input { font:inherit }
-    button { cursor:pointer }
-    a,button,input { touch-action:manipulation }
-    a:focus-visible,button:focus-visible,input:focus-visible { outline:3px solid #235d9f; outline-offset:4px }
-    .wrap { width:min(1160px,100% - 48px); margin-inline:auto }
-    .nav { display:flex; justify-content:space-between; align-items:center; gap:20px; padding-block:24px }
-    .brand { text-decoration:none; color:var(--ink); font-size:16px; font-weight:750; letter-spacing:-.025em; line-height:1.3 }
-    .brand small { display:block; margin-top:4px; font-size:11px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--muted) }
-    .cta { display:inline-flex; align-items:center; justify-content:center; min-height:48px; border:1px solid transparent; border-radius:7px; padding:12px 22px; background:var(--accent); color:white; font-weight:650; text-decoration:none; line-height:1.4 }
-    .cta:hover { background:#0c5049 }
-    .nav .cta { background:white; border-color:var(--line); color:var(--ink) }
-    .nav .cta:hover { border-color:var(--accent); color:var(--accent) }
-    .hero { padding:76px 0 80px; background:var(--soft); border-block:1px solid #e8eae2 }
-    .hero-grid { display:grid; grid-template-columns:1.08fr 1fr; align-items:center; gap:64px }
-    .eyebrow { color:var(--accent); font-size:11px; font-weight:750; letter-spacing:.14em; text-transform:uppercase; margin:0 0 16px }
-    h1 { font-size:clamp(38px,4.8vw,62px); font-weight:700; line-height:1.06; letter-spacing:-.05em; margin:0 0 24px; max-width:600px; text-wrap:balance }
-    h2 { font-size:clamp(28px,3.2vw,40px); line-height:1.16; letter-spacing:-.035em; font-weight:650; margin:0 0 20px; text-wrap:balance }
-    h3 { line-height:1.35; letter-spacing:-.02em }
-    .lead { font-size:18px; line-height:1.7; color:var(--muted); max-width:490px; margin:0 0 28px }
-    .note,.caption { font-size:13px; color:var(--muted); line-height:1.6 }
-    .hero .note { margin:16px 0 0 }
-    .hero-card { background:#fff; padding:28px; border:1px solid var(--line); border-radius:16px; box-shadow:0 24px 48px -28px #142b3b45; transform:rotate(-2deg) }
-    .tag { display:inline-block; padding:5px 10px; background:#e8f2ee; color:var(--accent); border-radius:4px; font-size:11px; font-weight:650; letter-spacing:.025em }
-    .hero-card svg { display:block; width:100%; height:auto; margin-block:16px }
-    .caption { border-top:1px solid var(--line); padding-top:14px; margin:0 }
-    .benefits { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:40px; padding-block:52px }
-    .benefits article { padding-left:18px; border-left:2px solid #b4d4c7 }
-    .benefits h2 { font-size:18px; line-height:1.35; letter-spacing:-.02em; margin:0 0 8px }
-    .benefits p { font-size:14px; color:var(--muted); margin:0 }
-    .how-it-works { padding-block:52px 64px; border-top:1px solid var(--line) }
-    .how-it-works h2 { max-width:640px }
-    .steps { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:40px; list-style:none; padding:0; margin:36px 0 24px }
-    .steps li { padding-top:16px; border-top:1px solid var(--line) }
-    .step-number { font-size:12px; color:var(--accent); font-weight:750; letter-spacing:.08em }
-    .steps h3 { font-size:18px; margin:12px 0 8px }
-    .steps p { color:var(--muted); font-size:14px; margin:0 }
-    .how-link { font-size:14px; font-weight:650; display:inline-block; padding-block:10px }
-    .demo-section { background:#edf3ef; padding-block:64px; scroll-margin-top:20px; border-block:1px solid var(--line) }
-    .intro { max-width:650px }
-    .intro>p:last-child { color:var(--muted); margin-bottom:0 }
-    .demo-grid { display:grid; grid-template-columns:300px minmax(0,1fr); margin-top:32px; border:1px solid #c7d6cd; border-radius:14px; overflow:hidden; background:white; box-shadow:0 16px 40px -30px #142b3b55 }
-    .panel { padding:28px; border-right:1px solid var(--line); background:#fbfcfa }
-    .panel h3 { margin:0 0 24px; font-size:19px }
-    .map-card { padding:28px; scroll-margin-top:20px; min-width:0 }
-    .map-card svg { display:block; width:100%; height:auto }
-    .map-floor { display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin:0 0 14px; padding-bottom:14px; border-bottom:1px solid var(--line); font-size:13px }
-    .map-floor span { font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.08em }
-    .destinations { display:grid; gap:10px }
-    .destination { display:flex; align-items:center; justify-content:space-between; width:100%; min-height:48px; padding:12px 14px; background:white; border:1px solid var(--line); border-radius:6px; color:var(--ink); font-size:14px; font-weight:650; text-align:left }
-    .destination::after { content:'→'; color:var(--accent); margin-left:8px }
-    .destination:hover { border-color:var(--accent); background:#eef6f1 }
-    .destination[aria-pressed="true"] { background:var(--green); border-color:var(--green); color:white }
-    .destination[aria-pressed="true"]::after { color:white }
-    .directions { margin-top:24px; padding-top:20px; border-top:1px solid var(--line); min-height:140px; font-size:14px }
-    .directions p { color:var(--muted); margin:8px 0 }
-    .reset { background:transparent; color:var(--accent); border:0; text-decoration:underline; text-underline-offset:3px; font-size:14px; min-height:44px; padding:8px 0 }
-    .search-tools { margin-bottom:18px }
-    .search-tools label { font-size:12px }
-    .search-tools input { margin-bottom:0; background:white }
-    .search-tools .note { font-size:12px; margin:8px 0 0 }
-    .search-summary { font-size:13px; color:var(--muted); margin:4px 0 12px }
-    .legend { display:flex; flex-wrap:wrap; gap:20px; font-size:12px; color:var(--muted); margin-top:14px }
-    .dot { display:inline-block; width:9px; height:9px; border-radius:50%; background:var(--green); margin-right:6px }
-    .dot.start { background:#235d9f }
-    .map-next-step { border-top:1px solid var(--line); margin-top:24px; padding-top:22px }
-    .map-next-step p:first-child { margin:0 0 14px; font-size:16px }
-    .map-next-step .note { margin-bottom:0 }
-    #request { scroll-margin-top:24px }
-    .request { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start; padding-block:80px }
-    .request>div>p:not(.eyebrow) { color:var(--muted); max-width:480px }
-    form { padding:32px; background:var(--soft); border:1px solid var(--line); border-radius:12px }
-    label { display:block; margin-bottom:8px; font-size:14px; font-weight:650 }
-    input { width:100%; min-width:0; min-height:48px; margin-bottom:20px; padding:12px; border:1px solid #8a9c99; border-radius:6px; background:white; color:var(--ink); font-size:16px }
-    input::placeholder { color:#60716f; opacity:1 }
-    form .cta { width:100% }
-    #form-status { font-size:14px; border-left:3px solid var(--accent); padding-left:12px }
-    .foot { border-top:1px solid var(--line); padding-block:24px; color:var(--muted); font-size:12px }
-    .skip { position:absolute; top:-100px; left:20px; padding:12px; background:white; z-index:2 }
-    .skip:focus { top:10px }
-    [hidden] { display:none!important }
-    .department { transition:fill .15s,stroke .15s }
-    .department.is-selected { fill:#d4eade; stroke:var(--accent); stroke-width:3 }
-    .department-label { font-weight:650 }
-    @media(max-width:760px) {
-      .wrap { width:calc(100% - 40px) }
-      .nav { gap:12px; padding-block:18px }
-      .brand { font-size:14px }
-      .brand small { font-size:10px }
-      .nav .cta { font-size:13px; padding:10px 14px; white-space:nowrap }
-      .hero { padding:44px 0 48px }
-      .hero-grid,.demo-grid,.request { grid-template-columns:1fr; gap:28px }
-      .hero-grid { gap:36px }
-      h1 { font-size:42px }
-      .lead { font-size:17px }
-      .hero-card { transform:none; padding:22px }
-      .benefits { grid-template-columns:1fr; gap:24px; padding-block:36px }
-      .how-it-works { padding-block:36px 44px }
-      .steps { grid-template-columns:1fr; gap:24px; margin-top:28px }
-      .demo-section { padding-block:44px }
-      .demo-grid { gap:0 }
-      .panel { border-right:0; border-bottom:1px solid var(--line); padding:24px }
-      .map-card { padding:16px }
-      .request { padding-block:48px; gap:24px }
-      form { padding:24px }
-    }
-    @media(prefers-reduced-motion:reduce) { html{scroll-behavior:auto}.department{transition:none} }
-  </style>
+/* Reference-led composition: one continuous spatial field, with an offset interface. */
+#clarity-concept .cc-hero{position:relative;display:block;min-height:650px;background:#27272e}
+#clarity-concept .cc-copy{position:relative;width:53%;padding:64px 0 100px 42px;pointer-events:none}
+#clarity-concept .cc-copy button{pointer-events:auto}
+#clarity-concept h1{font-family:system-ui,-apple-system,BlinkMacSystemFont,sans-serif;font-size:clamp(48px,6.2vw,72px);font-weight:650;line-height:1.02;letter-spacing:-3.8px;margin-bottom:30px}
+#clarity-concept h1 em{font-style:normal;color:#aaaaff}
+#clarity-concept .cc-deck{max-width:285px;font-size:14px}
+#clarity-concept .cc-art{position:absolute;right:0;top:0;bottom:0;width:57%;min-height:0;border:0;background:radial-gradient(ellipse at 60% 60%,#4145ff26,transparent 65%),#27272e;padding:28px 0 100px;align-items:center}
+#clarity-concept .cc-art::before{background:none}
+#clarity-concept .cc-map{transform:rotate(-9deg);width:110%;max-width:none;flex-shrink:0}
+#clarity-concept .cc-maptitle{left:auto;right:26px;top:34px;font-size:9px;letter-spacing:1.6px;text-align:right}
+#clarity-concept .cc-north{top:auto;bottom:208px;right:28px;font-size:10px}
+#clarity-concept .cc-route-card{left:80px;right:25px;bottom:28px;border-radius:5px;padding:16px 20px;box-shadow:0 24px 40px #11112566}
+#clarity-concept .cc-primary{background:#4a4dff;border-radius:4px;font-weight:600}
+#clarity-concept .cc-eyebrow{font-family:system-ui,sans-serif;font-size:10px;letter-spacing:1.7px;margin-bottom:40px}
+#clarity-concept .cc-dot{background:#888bff;border-radius:0}
+#clarity-concept .cc-bottom{background:#f5f5f1;color:#22252e;border:0;padding:44px 42px;grid-template-columns:1.2fr 1fr 1fr;gap:36px}
+#clarity-concept .cc-bottom h2{font-family:system-ui,sans-serif;font-weight:600;font-size:27px;letter-spacing:-1px}
+#clarity-concept .cc-bottom p{color:#59616b}
+#clarity-concept .cc-bottom>div{border-top:1px solid #bfc6c7;padding-top:14px}
+#clarity-concept .cc-number{color:#4d53a8;font-size:9px}
+#clarity-concept .cc-lab{background:#f5f5f1;color:#22252e;border-top:1px solid #d7dad6;padding:20px 42px}
+#clarity-concept .cc-lab label{color:#59616b}
+#clarity-concept .cc-options button{color:#22252e;border-color:#bfc6c7}
+#clarity-concept .cc-options button[aria-pressed=true]{color:white;background:#3235ad;border-color:#3235ad}
+@media(max-width:650px){
+ #clarity-concept .cc-hero{display:flex;flex-direction:column;min-height:0}
+ #clarity-concept .cc-copy{width:100%;padding:42px 24px 32px}
+ #clarity-concept h1{font-size:56px;letter-spacing:-3px}
+ #clarity-concept .cc-eyebrow{margin-bottom:26px}
+ #clarity-concept .cc-deck{max-width:360px}
+ #clarity-concept .cc-art{position:relative;inset:auto;width:100%;height:560px;min-height:560px;padding:30px 0 100px;border-top:1px solid #454551}
+ #clarity-concept .cc-map{width:100%;transform:rotate(-6deg)}
+ #clarity-concept .cc-route-card{left:20px;right:20px;bottom:22px}
+ #clarity-concept .cc-north{bottom:190px}
+ #clarity-concept .cc-bottom{grid-template-columns:1fr;padding:32px 24px;gap:28px}
+ #clarity-concept .cc-lab{padding:20px 24px}
+}
+
+#clarity-concept{overflow:hidden}body{margin:0;background:#27272e}html{scroll-behavior:smooth}
+#clarity-concept a{color:inherit;text-underline-offset:4px}#clarity-concept .cc-primary{text-decoration:none}
+#clarity-concept .cc-links a{text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+#clarity-concept .cc-options{display:flex;flex-wrap:wrap;gap:8px}
+#clarity-concept .cc-lab{align-items:flex-start;scroll-margin-top:20px;flex-wrap:wrap}
+#clarity-concept .cc-search{max-width:330px;flex:1;min-width:220px}
+#clarity-concept .cc-search label{display:block;margin-bottom:8px}
+#clarity-concept input{font:16px/1.5 system-ui,sans-serif;padding:11px 12px;border:1px solid #9ca6ad;border-radius:4px;box-sizing:border-box;width:100%;background:#fff;color:#22252e}
+#clarity-concept .cc-search p{font:12px/1.5 system-ui,sans-serif;color:#59616b;margin:8px 0}
+#clarity-concept .cc-reset{font:12px/1.5 system-ui,sans-serif;background:transparent;border:0;text-decoration:underline;padding:10px 0;min-height:44px;color:#3235ad}
+#clarity-concept .cc-control-side{max-width:440px}#clarity-concept .cc-control-side>p{font:12px/1.5 system-ui,sans-serif;color:#59616b;margin:0 0 12px}
+#clarity-concept [hidden]{display:none!important}
+#clarity-concept .cc-request{background:#f5f5f1;color:#22252e;padding:56px 42px;display:grid;grid-template-columns:1fr 1fr;gap:64px;border-top:1px solid #d7dad6;scroll-margin-top:20px}
+#clarity-concept .cc-request h2{font:600 32px/1.12 system-ui,sans-serif;letter-spacing:-1.2px;margin:0 0 20px}
+#clarity-concept .cc-request p{font:14px/1.7 system-ui,sans-serif;color:#59616b;margin:12px 0}
+#clarity-concept .cc-request form{border:1px solid #d7dad6;border-radius:6px;padding:24px;background:#fff}
+#clarity-concept .cc-request label{font:600 13px/1.5 system-ui,sans-serif;display:block;margin-bottom:8px}
+#clarity-concept .cc-request input{margin-bottom:20px}
+#clarity-concept .cc-request .cc-primary{width:100%;justify-content:center;min-height:48px}
+#clarity-concept .cc-footer{padding:24px 42px;font:11px/1.7 system-ui,sans-serif;color:#c1c2d3}
+.skip{position:absolute;left:16px;top:-90px;padding:12px;background:#fff;color:#22252e;z-index:10}.skip:focus{top:10px}
+#clarity-concept a:focus-visible,#clarity-concept button:focus-visible,#clarity-concept input:focus-visible{outline:3px solid #63bcff;outline-offset:4px}
+#clarity-concept .cc-map{max-width:110%}#clarity-concept .cc-art{scroll-margin-top:20px}
+@media(max-width:650px){#clarity-concept .cc-lab{align-items:stretch}#clarity-concept .cc-search{max-width:none;min-width:0;width:100%}#clarity-concept .cc-request{grid-template-columns:1fr;padding:36px 24px;gap:20px}#clarity-concept .cc-footer{padding:24px}#clarity-concept .cc-art{height:610px;min-height:610px}#clarity-concept .cc-route-card{bottom:24px}#clarity-concept .cc-deck{font-size:16px}#clarity-concept .cc-links{display:flex}#clarity-concept .cc-links a:first-child{display:none}#clarity-concept .cc-nav{gap:10px}#clarity-concept .cc-brand{font-size:15px}#clarity-concept .cc-brand span{font-size:8px;letter-spacing:1px}#clarity-concept .cc-links{font-size:12px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
-  <nav class="nav wrap" aria-label="Main navigation"><a class="brand" href="/">Hospital Wayfinding<small>Independent concept</small></a><a class="cta" href="#demo">Try the map</a></nav>
-  <header class="hero"><div class="wrap hero-grid"><div>
-    <p class="eyebrow">For hospitals and health systems</p>
-    <h1>A clearer path to every appointment.</h1>
-    <p class="lead">Help patients and visitors find the right department, with indoor directions they can follow from the entrance.</p>
-    <a class="cta" href="#demo">Explore the hospital map</a>
-    <p class="note">An independent wayfinding concept.</p>
-  </div><div class="hero-card"><span class="tag">Cedar Hospital · Wayfinding concept</span>
-    <svg viewBox="0 0 360 230" role="img" aria-label="Illustration of a route from a hospital entrance to a department">
-      <rect x="15" y="30" width="330" height="180" rx="14" fill="#f5f2ec"/>
-      <g fill="#e0e9e3" stroke="#bdcfc3" stroke-width="2"><rect x="32" y="47" width="80" height="55" rx="6"/><rect x="135" y="47" width="80" height="55" rx="6"/><rect x="238" y="47" width="88" height="55" rx="6"/><rect x="135" y="151" width="80" height="40" rx="6"/><rect x="238" y="151" width="88" height="40" rx="6"/></g>
-      <path d="M65 175V126H278V104" fill="none" stroke="#12675e" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-      <circle cx="65" cy="175" r="8" fill="#235d9f"/><circle cx="278" cy="104" r="8" fill="#12675e"/>
-      <g fill="#142b3b" font-family="system-ui,sans-serif" font-size="13"><text x="32" y="157">Entrance</text><text x="250" y="80">Your visit</text></g>
-    </svg><p class="caption">One simple route. A more confident arrival.</p>
-  </div></div></header>
-  <main id="main">
-    <section class="wrap benefits" aria-label="Potential benefits">
-      <article><h2>Help patients arrive prepared</h2><p>Make the journey from the entrance to the department easier to understand.</p></article>
-      <article><h2>Support the front desk</h2><p>Give visitors a self-service option for everyday direction questions.</p></article>
-      <article><h2>Make places easier to navigate</h2><p>Show destinations and directions together in one clear view.</p></article>
-    </section>
-    <section class="wrap how-it-works" aria-labelledby="how-title">
-      <p class="eyebrow">How it works</p>
-      <h2 id="how-title">From entrance to destination in three steps.</h2>
-      <ol class="steps">
-        <li><span class="step-number" aria-hidden="true">01</span><h3>Find your department</h3><p>Search for Reception, Pharmacy, or Imaging, or choose from the destination list.</p></li>
-        <li><span class="step-number" aria-hidden="true">02</span><h3>Follow the route</h3><p>Select a department to see a highlighted path from the entrance, with written directions alongside it.</p></li>
-        <li><span class="step-number" aria-hidden="true">03</span><h3>Arrive at your destination</h3><p>The route ends at your selected department. In this concept, every journey starts at the main entrance.</p></li>
-      </ol>
-      <a class="how-link" href="#demo">Try the three steps on the map <span aria-hidden="true">→</span></a>
-    </section>
-    <section id="demo" class="demo-section"><div class="wrap">
-      <div class="intro"><p class="eyebrow">Try it yourself</p><h2>Where would you like to go?</h2><p>You're at the main entrance of fictional Cedar Hospital. Search or choose a department to see your route.</p></div>
-      <div class="demo-grid"><div class="panel"><h3>Choose a destination</h3>
-        <div class="search-tools" id="search-tools" hidden>
-          <label for="destination-search">Search departments</label>
-          <input id="destination-search" type="search" placeholder="Try Pharmacy" autocomplete="off" aria-controls="destination-list" aria-describedby="search-hint">
-          <p id="search-hint" class="note">Type a name, then select a result to see its route.</p>
-          <button class="reset" id="clear-search" type="button" hidden>Clear search</button>
-        </div>
-        <p id="search-summary" class="search-summary" role="status" aria-live="polite" aria-atomic="true" hidden></p>
-        <div id="destination-list" class="destinations" role="group" aria-label="Map destinations">
-          <button class="destination" type="button" data-destination="reception" aria-pressed="false">Reception</button>
-          <button class="destination" type="button" data-destination="pharmacy" aria-pressed="false">Pharmacy</button>
-          <button class="destination" type="button" data-destination="imaging" aria-pressed="false">Imaging</button>
-        </div>
-        <div class="directions" role="status" aria-live="polite" aria-atomic="true"><strong id="route-title">Start at the entrance</strong><p id="route-text">Select a destination above. Your directions will appear here.</p></div>
-        <button class="reset" id="reset" type="button">Clear route</button>
-        <noscript><p>Enable JavaScript to select routes. All destinations are on the main corridor: Reception is left, Pharmacy is straight ahead, and Imaging is right.</p></noscript>
-      </div><div class="map-card">
-        <p class="map-floor"><strong>Cedar Hospital</strong><span>Ground floor</span></p>
-        <svg viewBox="0 0 640 420" role="img" aria-labelledby="map-title map-description">
-          <title id="map-title">Cedar Hospital — ground floor</title>
-          <desc id="map-description">A fictional floor plan. The entrance is at the bottom centre. A corridor leads to Reception on the left, Pharmacy straight ahead, and Imaging on the right. Text directions appear beside the map.</desc>
-          <rect x="14" y="14" width="612" height="392" rx="16" fill="#f8faf8" stroke="#cdd4d1" stroke-width="2"/>
-          <g fill="#e5ece7" stroke="#c1d0c6" stroke-width="2"><rect id="room-reception" class="department" x="42" y="55" width="182" height="130" rx="8"/><rect id="room-pharmacy" class="department" x="258" y="55" width="124" height="130" rx="8"/><rect id="room-imaging" class="department" x="416" y="55" width="182" height="130" rx="8"/><rect x="42" y="259" width="182" height="112" rx="8"/><rect x="416" y="259" width="182" height="112" rx="8"/></g>
-          <path d="M320 366V222M130 222H510M130 222V184M320 222V184M510 222V184" fill="none" stroke="#e1e6e2" stroke-width="30" stroke-linecap="round"/>
-          <path id="route-line" d="M320 366V222" hidden fill="none" stroke="#12675e" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle id="route-end" cx="320" cy="184" r="9" hidden fill="#12675e" stroke="white" stroke-width="3"/>
-          <circle cx="320" cy="366" r="10" fill="#235d9f" stroke="white" stroke-width="3"/>
-          <g fill="#142b3b" font-family="system-ui,sans-serif" font-size="18" class="department-label" text-anchor="middle"><text x="133" y="125">Reception</text><text x="320" y="125">Pharmacy</text><text x="507" y="125">Imaging</text><text x="133" y="320">Waiting area</text><text x="507" y="320">Consultation</text><text x="320" y="399" font-size="15">You are here · Entrance</text></g>
-        </svg>
-        <div class="legend"><span><i class="dot start"></i>You are here</span><span><i class="dot"></i>Selected route</span></div>
-        <p class="note">Ground floor · Fictional layout, not to scale. Routes are predefined for this demonstration.</p>
-        <div class="map-next-step">
-          <p><strong>Explore wayfinding for your venue.</strong></p>
-          <a class="cta" href="#request" aria-describedby="request-link-note">Request a demo</a>
-          <p id="request-link-note" class="note">Try the practice form. No request is sent.</p>
-        </div>
-      </div></div>
-    </div></section>
-    <section id="request" class="wrap request"><div><p class="eyebrow">The next step</p><h2>Make the next visit easier to navigate.</h2><p>A real landing page would connect this experience to a conversation about your venue. Try the form to explore that flow.</p><p class="note">Practice form only. Nothing is sent or saved, and no demo will be booked. Use made-up details.</p></div>
-      <form id="demo-form"><label for="name">Name</label><input id="name" name="name" autocomplete="off" required maxlength="100" placeholder="Alex Example"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="off" required maxlength="254" placeholder="alex@example.com"><button class="cta" type="submit">Try demo request</button><p id="form-status" role="status" aria-live="polite" hidden></p></form>
-    </section>
-  </main>
-  <footer class="foot"><div class="wrap">Hospital Wayfinding · Independent practice concept. Not affiliated with Mappedin. Venue, routes, and benefits are illustrative.</div></footer>
-  <script>
-    const routes = {
-      reception: {name:'Reception', path:'M320 366V222H130V184', x:130, text:'Walk straight from the entrance to the main corridor. Turn left, then turn right into Reception.'},
-      pharmacy: {name:'Pharmacy', path:'M320 366V184', x:320, text:'Walk straight from the entrance, cross the main corridor, and continue into Pharmacy.'},
-      imaging: {name:'Imaging', path:'M320 366V222H510V184', x:510, text:'Walk straight from the entrance to the main corridor. Turn right, then turn left into Imaging.'}
-    };
-    const buttons = document.querySelectorAll('[data-destination]');
-    const search = document.getElementById('destination-search');
-    const clearSearch = document.getElementById('clear-search');
-    const summary = document.getElementById('search-summary');
-    document.getElementById('search-tools').hidden = false;
-    const filterDestinations = () => {
-      const query = search.value.trim().toLowerCase();
-      let matches = 0;
-      buttons.forEach(button => {
-        const match = routes[button.dataset.destination].name.toLowerCase().includes(query);
-        button.hidden = !match;
-        if (match) matches++;
-      });
-      clearSearch.hidden = search.value.length === 0;
-      summary.hidden = query.length === 0;
-      summary.textContent = matches === 0
-        ? 'No destinations found. Try Reception, Pharmacy, or Imaging.'
-        : matches + (matches === 1 ? ' destination found.' : ' destinations found.');
-    };
-    search.addEventListener('input', filterDestinations);
-    clearSearch.addEventListener('click', () => {
-      search.value = '';
-      filterDestinations();
-      search.focus();
-    });
-    const line = document.getElementById('route-line');
-    const endpoint = document.getElementById('route-end');
-    const title = document.getElementById('route-title');
-    const directions = document.getElementById('route-text');
-    buttons.forEach(button => button.addEventListener('click', () => {
-      const route = routes[button.dataset.destination];
-      buttons.forEach(item => document.getElementById('room-' + item.dataset.destination)
-        .classList.toggle('is-selected', item === button));
-      buttons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
-      line.setAttribute('d', route.path);
-      line.removeAttribute('hidden');
-      endpoint.setAttribute('cx', route.x);
-      endpoint.removeAttribute('hidden');
-      title.textContent = 'Entrance → ' + route.name;
-      directions.textContent = route.text;
-      if (window.matchMedia('(max-width: 760px)').matches) {
-        document.querySelector('.map-card').scrollIntoView({
-          behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth',
-          block: 'start'
-        });
-      }
-    }));
-    document.getElementById('reset').addEventListener('click', () => {
-      buttons.forEach(button => button.setAttribute('aria-pressed', 'false'));
-      buttons.forEach(button => document.getElementById('room-' + button.dataset.destination)
-        .classList.remove('is-selected'));
-      line.setAttribute('hidden', '');
-      endpoint.setAttribute('hidden', '');
-      title.textContent = 'Start at the entrance';
-      directions.textContent = 'Select a destination above. Your directions will appear here.';
-    });
-    document.getElementById('demo-form').addEventListener('submit', event => {
-      event.preventDefault();
-      const status = document.getElementById('form-status');
-      status.hidden = false;
-      status.textContent = 'Practice request complete. On a live site, this would be a confirmation of your request. No details were sent or saved.';
-      event.currentTarget.reset();
-    });
-  </script>
+<div id="clarity-concept" aria-label="Map-led hospital wayfinding visual direction">
+  <a class="skip" href="#main">Skip to content</a><nav class="cc-nav" aria-label="Concept navigation"><div class="cc-brand">Hospital Wayfinding<span>Independent concept for Mappedin</span></div><div class="cc-links"><a href="#request">Practice demo request</a><a href="#demo">Try the map ↗</a></div></nav>
+  <main id="main"><header class="cc-hero">
+    <div class="cc-copy"><div class="cc-eyebrow"><span class="cc-dot"></span>For hospitals. For people.</div><h1>Care starts<br>with a clear<br><em>way forward.</em></h1><p class="cc-deck">Help patients find their next appointment, with indoor directions that make every turn feel clear.</p><a href="#demo" class="cc-primary" id="cc-explore">Find your way <span aria-hidden="true">↗</span></a><div class="cc-disclaimer">Independent concept · Not affiliated with Mappedin</div></div>
+    <div class="cc-art" id="map-view"><div class="cc-maptitle"><b>CEDAR HOSPITAL</b><br>GROUND FLOOR / NORTH WING</div><div class="cc-north">↑<br>N</div>
+      <svg class="cc-map" viewBox="0 0 600 520" role="img" aria-label="Fictional hospital floor plan with a route from the entrance to the selected department">
+        <g fill="#353746" stroke="#686c87" stroke-width="2">
+          <path d="M54 86H240V194H54Z"/><path d="M258 86H352V194H258Z"/><path d="M370 86H546V194H370Z"/>
+          <path d="M54 250H170V356H54Z"/><path d="M188 250H290V356H188Z"/><path d="M366 250H452V356H366Z"/><path d="M470 250H546V356H470Z"/>
+          <path d="M54 374H170V444H54Z"/><path d="M188 374H290V444H188Z"/><path d="M366 374H452V444H366Z"/><path d="M470 374H546V444H470Z"/>
+        </g>
+        <g stroke="#6b6d86" stroke-width="1"><path d="M98 86V114M144 86V114M190 86V114M414 86V114M460 86V114M506 86V114M54 284H80M54 322H80M546 284H520M546 322H520"/></g>
+        <g fill="#b7b9d0" font-size="15"><text x="70" y="108">A.01</text><text x="273" y="108">A.02</text><text x="388" y="108">A.03</text><text x="70" y="397">B.01</text><text x="203" y="397">B.02</text><text x="381" y="397">B.03</text><text x="484" y="397">B.04</text></g>
+        <g font-size="23" text-anchor="middle"><text x="146" y="157">Reception</text><text x="305" y="157">Rx</text><text x="458" y="157">Imaging</text><text x="112" y="310" font-size="18">Waiting</text><text x="238" y="300" font-size="18">Patient</text><text x="238" y="323" font-size="18">services</text><text x="408" y="310" font-size="18">Clinic</text><text x="508" y="310" font-size="18">Lifts</text></g>
+        <rect id="cc-room" x="370" y="86" width="176" height="108" fill="#656aff30" stroke="#858aff" stroke-width="3"/>
+        <path id="cc-route" d="M328 451V222H458V194" fill="none" stroke="#858aff" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+        <circle id="cc-end" cx="458" cy="194" r="8" fill="#858aff" stroke="#ffffff" stroke-width="3"/>
+        <circle cx="328" cy="451" r="13" fill="#6cb9ff30"/><circle cx="328" cy="451" r="6" fill="#72caff"/>
+        <text x="328" y="485" text-anchor="middle" font-size="18">Main entrance</text>
+      </svg>
+      <div class="cc-route-card" role="status" aria-live="polite"><div class="cc-card-kicker">Selected destination</div><div class="cc-card-row"><span class="cc-dest" id="cc-dest">Diagnostic imaging</span><span class="cc-floor">Level G</span></div><p class="cc-directions" id="cc-directions">Follow the main corridor. Turn right at the junction, then left into Imaging.</p></div>
+    </div>
+  </header>
+  <section class="cc-bottom" aria-label="Potential benefits"><h2>A better visit starts<br>with a clearer arrival.</h2><div><span class="cc-number">01 / FOR PATIENTS</span><strong>A clearer arrival</strong><p>Connect the entrance to the department with a route visitors can follow.</p></div><div><span class="cc-number">02 / FOR STAFF</span><strong>Space to focus on care</strong><p>Give visitors a self-service option for everyday direction questions.</p></div></section>
+  <section class="cc-lab" id="demo" aria-label="Try hospital wayfinding">
+<div class="cc-search" id="search-tools" hidden><label for="destination-search">Find your department</label><input id="destination-search" type="search" placeholder="Try Pharmacy" aria-controls="destination-list" autocomplete="off"><p>Search, then select a department to show its route.</p><button type="button" id="clear-search" class="cc-reset" hidden>Clear search</button><p id="search-summary" role="status" aria-live="polite" hidden></p></div><div class="cc-control-side"><p>Fictional hospital · Ground floor · Predefined routes, not to scale</p><div id="destination-list" class="cc-options" role="group" aria-label="Illustrative destination"><button type="button" class="cursor-interaction" data-room="reception" aria-pressed="false">Reception</button><button type="button" class="cursor-interaction" data-room="pharmacy" aria-pressed="false">Pharmacy</button><button type="button" class="cursor-interaction" data-room="imaging" aria-pressed="true">Imaging</button></div><button class="cc-reset" id="reset" type="button">Clear route</button><noscript><p>Enable JavaScript to change the route. The illustrated route leads to Imaging.</p></noscript></div></section>
+<section class="cc-request" id="request" aria-labelledby="request-title"><div><h2 id="request-title">A clearer path for your visitors.</h2><p>Explore how a wayfinding experience could help people navigate your venue.</p><p>Practice form only. Use made-up details. Nothing is sent or saved, and no demo will be booked.</p></div><form id="demo-form"><label for="name">Name</label><input id="name" name="name" required maxlength="100" autocomplete="off" placeholder="Alex Example"><label for="email">Email</label><input id="email" name="email" type="email" required maxlength="254" autocomplete="off" placeholder="alex@example.com"><button type="submit" class="cc-primary">Try demo request</button><p id="form-status" role="status" aria-live="polite" hidden></p></form></section>
+</main><footer class="cc-footer">Independent healthcare concept for Mappedin. Not affiliated with Mappedin. Fictional venue and illustrative benefits. No live positioning or real hospital navigation.</footer></div>
+<script>
+(()=>{
+ const root=document.getElementById('clarity-concept');
+ const rooms={reception:{x:54,w:186,end:146,name:'Reception',text:'Follow the main corridor. Turn left at the junction, then right into Reception.'},pharmacy:{x:258,w:94,end:305,name:'Pharmacy',text:'Follow the main corridor and bear left at the junction to reach Pharmacy.'},imaging:{x:370,w:176,end:458,name:'Diagnostic imaging',text:'Follow the main corridor. Turn right at the junction, then left into Imaging.'}};
+ function choose(key){const r=rooms[key]||rooms.imaging;const room=root.querySelector('#cc-room');room.setAttribute('x',r.x);room.setAttribute('width',r.w);root.querySelector('#cc-route').setAttribute('d','M328 451V222H'+r.end+'V194');root.querySelector('#cc-end').setAttribute('cx',r.end);root.querySelector('#cc-dest').textContent=r.name;root.querySelector('#cc-directions').textContent=r.text;root.querySelectorAll('[data-room]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.room===key)));}
+
+ const buttons=root.querySelectorAll('[data-room]');
+ const search=root.querySelector('#destination-search');
+ const summary=root.querySelector('#search-summary');
+ const clear=root.querySelector('#clear-search');
+ root.querySelector('#search-tools').hidden=false;
+ function filter(){const q=search.value.trim().toLowerCase();let count=0;buttons.forEach(b=>{b.hidden=!b.textContent.toLowerCase().includes(q);if(!b.hidden)count++;});clear.hidden=!search.value;summary.hidden=!q;summary.textContent=count?count+' destination'+(count===1?'':'s')+' found.':'No destinations found. Try Reception, Pharmacy, or Imaging.';}
+ search.addEventListener('input',filter);
+ clear.addEventListener('click',()=>{search.value='';filter();search.focus();});
+ buttons.forEach(b=>b.addEventListener('click',()=>{choose(b.dataset.room);root.querySelector('#cc-route').removeAttribute('hidden');root.querySelector('#cc-end').removeAttribute('hidden');root.querySelector('#cc-room').removeAttribute('hidden');root.querySelector('#map-view').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'instant':'smooth',block:'start'});}));
+ root.querySelector('#reset').addEventListener('click',()=>{['#cc-route','#cc-end','#cc-room'].forEach(id=>root.querySelector(id).setAttribute('hidden',''));buttons.forEach(b=>b.setAttribute('aria-pressed','false'));root.querySelector('#cc-dest').textContent='Start at the entrance';root.querySelector('#cc-directions').textContent='Select a department below to show your route.';});
+ root.querySelector('#demo-form').addEventListener('submit',event=>{event.preventDefault();const status=root.querySelector('#form-status');status.hidden=false;status.textContent='Practice request complete. No details were sent or saved, and no demo was booked.';event.currentTarget.reset();});
+})();
+</script>
 </body>
 </html>
+
 
 
 
