@@ -11,3 +11,10 @@ body { margin: 0; font-family: system-ui, sans-serif; color: var(--ink); }
 @media (max-width: 768px) {
   .hero, .features { grid-template-columns: 1fr; }
 }
+.nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; }
+.nav a:first-child { font-weight: 700; color: var(--ink); text-decoration: none; }
+.eyebrow { color: var(--accent); font-weight: 600; margin: 0 0 .5rem; }
+.proof { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; padding: 3rem 2rem; }
+.demo { padding: 3rem 2rem; background: var(--soft); text-align: center; }
+.foot { padding: 2rem; font-size: .9rem; text-align: center; }
+@media (max-width: 768px) { .proof { grid-template-columns: 1fr; } }
